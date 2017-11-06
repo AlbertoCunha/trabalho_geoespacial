@@ -1,3 +1,5 @@
+use alberto_dbgeo;
+
 db.alunos.insert({
 	nome: "Alberto",
 	localizacao: { type: "Point", coordinates: [ -43.3179225, -15.8057438 ] },
@@ -132,7 +134,7 @@ db.alunos.insert({
 
 db.alunos.insert({
 	nome: "Emille",
-	localizacao: { type: "Point", coordinates: [ -43.8039344, -43.3125666 ] },
+	localizacao: { type: "Point", coordinates: [ -43.8039344, -15.8039344 ] },
 	categoria: "alunos"
 });
 
@@ -184,3 +186,4 @@ db.alunos.insert({
 	categoria: "alunos"
 });
 
+db.alunos.createIndex({localizacao: "2dsphere"})
